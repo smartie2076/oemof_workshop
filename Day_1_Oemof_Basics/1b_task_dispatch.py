@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
 """
+Edited based on https://github.com/rl-institut/workshop
 
-Dieses Skript bietet ein Gerüst für die Betriebsoptimierung eines Energiesystems mit oemof.
+This script includes the basic sections necessary for optimizing the operation of an energy system in oemof. Tasks:
 
-* Lade Eingangsdaten mit pandas
-* Um das Modell zu vervollstaendigen sollen:
-  * Komponenten erzeugt,
-  * parametriert und
-  * dem Energiesystem hinzugefügt werden.
-
+1) Load input data with pandas from input_data.csv
+2) To complete the model,
+    a) create all necessary components of the energy system (compare file energysystem.png)
+    b) parameterize the components
+    c) add the components to the energy system
 """
 
 

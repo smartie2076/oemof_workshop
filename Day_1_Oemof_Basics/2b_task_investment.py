@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 """
+Edited based on https://github.com/rl-institut/workshop
 
-Dieses Skript bietet ein Gerüst für die Investoptimierung eines Energiesystems mit oemof.
+This script provides the basic structure for perfoming an investment optimization with oemof. Tasks
 
-* Lade Eingangsdaten mit pandas
-* Um das Modell zu vervollstaendigen sollen
-  1. Die installierten Leistungen zuerst manuell angepasst werden, um Strombezug aus shortage zu vermeiden.
-  2. Die beiden Kraftwerke mit einem Invest()-Objekt versehen werden, um ihre Installierte Leistung zu optimieren.
+1) Read input data with pandas
+2) Complete the model by
+a) Modifying installed capacities manually while avoiding shortage
+b) Inluding an invest-object to each fossil fuelled power plant to optimize their capacity
 
 """
 

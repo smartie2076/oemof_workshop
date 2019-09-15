@@ -3,27 +3,27 @@
 # Postprocessing and plots
 
 """
+Edited from: https://github.com/rl-institut/workshop
 
-Dieses Skript bietet ein Gerüst für die Betriebsoptimierung eines Energiesystems mit oemof.
+This script presents the basic structure for a dispatch and investment optimization with oemof. Tasks:
 
-* Lade das gespeicherte Energiesystem
-* Filtere die Ergebnisse (results) nach
-  * Einsatzzeitreihen regelbare Kraftwerken
-  * Zeitreihen für Speicherbe-/entladung
-  * Zeitreihe für Speicherstand
+1) Load the stored energy system
+2) Filter the results to display
+   a) Dispatch timeseries of dispatchable plants
+   b) Timeseries for storage charge and discharge
+   c) Timeseries of stored capacity (SOC)
+   
+3) Filter the parameters to display
+   a) installed capacities
+   b) variable costs
 
-* Filtere die Parameter (params) nach
-  * Installierten Leistungen
-  * Variablen Kosten
+4) Calculate annual sums of all electricity generating units
 
-* Berechne Jahressummen
-  * die Jahresenergiemenge für die verschiedenen Stromerzeuger
+5) Plot
+    a) The energy fed in by each plant
+    b) The energy fed in by each plant within a week
+    c) A barplot of the installed capacities.
 
-
-* Plots
-  * Plotte die eingespeiste Energie für Kraftwerke und Erneuerbare
-  * Plotte die wöchentlich eingespeiste Energie (Tipp: pandas.resample kann dabei helfen)
-  * Erstelle einen Barplot der installierten Leistungen
 
 """
 
