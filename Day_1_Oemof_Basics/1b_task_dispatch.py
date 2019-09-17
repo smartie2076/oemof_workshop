@@ -29,7 +29,6 @@ energysystem = EnergySystem(timeindex=datetimeindex)
 
 filename = ''
 data = pd.read_csv(filename, sep=",")
-data.reinde
 # ## Create Buses
 
 
