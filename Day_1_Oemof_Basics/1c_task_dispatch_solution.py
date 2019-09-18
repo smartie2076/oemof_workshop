@@ -3,7 +3,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from oemof.solph import Sink, Source, Transformer, Bus, Flow, EnergySystem, Model
+from oemof.solph import Sink, Source, Transformer, Bus, Flow, EnergySystem, Model, Investment
 from oemof.solph.components import GenericStorage
 import oemof.outputlib as outputlib
 
@@ -15,8 +15,8 @@ solver = 'cbc'
 datetimeindex = pd.date_range('1/1/2016', periods=24*365, freq='H')
 energysystem = EnergySystem(timeindex=datetimeindex)
 
-filename = ''
-data = pd.read_csv(filename, sep=";", decimal=',')
+filename = 'input_data.csv'
+data = pd.read_csv(filename, sep=",")
 data = data.dropna(axis=1)
 print(data.head())
 
@@ -54,7 +54,7 @@ pp_coal = Transformer(label='pp_coal',
                       conversion_factors={bus_el: 0.39})
 
 storage_el = GenericStorage(label='storage_el',
-                            nominal_storage_capacity=1000,
+                            invest=Investment(ep_cost=412),
                             inputs={bus_el: Flow(nominal_value=200)},
                             outputs={bus_el: Flow(nominal_value=200)},
                             loss_rate=0.01,
